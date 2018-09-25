@@ -48,7 +48,7 @@ namespace gemmlowp {
 // between consecutive GEMM invokations, not just intra-GEMM considerations.
 // Of course, we need to balance keeping CPUs spinning longer to resume work
 // faster, versus passively waiting to conserve power.
-const int kMaxBusyWaitNOPs = 0 * 1000 * 1000;
+const int kMaxBusyWaitNOPs = 128 * 1000 * 1000;
 
 // On X86 and ARM platforms we may use NOP instructions to know how long we
 // are busy-waiting.
